@@ -7,7 +7,7 @@ const cookies = [
         colorBoton1: "bg-red-800",
         colorBoton2: "bg-red-100",
         colorFont: "group-hover:text-[--cake-astro]",
-        description:"",
+        description:"La Luna no sabe a queso pero si a sueños, galleta de chocolate blanco y almendras",
     },
     {
         name: "Venus",
@@ -16,7 +16,7 @@ const cookies = [
         colorBoton1: "bg-red-800",
         colorBoton2: "bg-red-100",
         colorFont: "group-hover:text-[--darkest-blue-astro]",
-        description:"",
+        description:"Te gusta el chocolate? 🍫 Esta será tu favorita, galleta de chocolate y nueces con relleno de crema de avellana",
     },
     {
         name: "Marte",
@@ -25,7 +25,7 @@ const cookies = [
         colorBoton1: "bg-red-800",
         colorBoton2: "bg-red-100",
         colorFont: "group-hover:text-[--cake-astro]",
-        description:"",
+        description:" El planeta rojo sabe a galleta de red velvet y chocolate blanco rellena de crema de queso ",
     },
     {
         name: "Sol",
@@ -34,7 +34,7 @@ const cookies = [
         colorBoton1: "bg-red-800",
         colorBoton2: "bg-red-100",
         colorFont: "group-hover:text-[--cake-astro]",
-        description:"",
+        description:" La clásica galleta con chispitas de colores pero mejorada! Galleta de vainilla con sprinkles rellena de crema de queso",
     },
     {
         name: "Urano",
@@ -43,7 +43,7 @@ const cookies = [
         colorBoton1: "bg-red-800",
         colorBoton2: "bg-red-100",
         colorFont: "group-hover:text-[--cake-astro]",
-        description:"",
+        description:"No tan dulce, no tan ácida, definitivamente diferente, galleta de vainilla con relleno de cheesecake de maracuya",
     },
     {
         name: "Saturno",
@@ -52,7 +52,7 @@ const cookies = [
         colorBoton1: "bg-red-800",
         colorBoton2: "bg-red-100",
         colorFont: "group-hover:text-[--darkest-blue-astro]",
-        description:"",
+        description:"Clásico de clásicos, galleta de chocolate semiamargo y nueces de nogal",
     },
 ];
 ---
@@ -60,7 +60,7 @@ const cookies = [
 <section class="flex flex-col gap-12 mx-32">
     <div class="flex flex-col m-5 p-10">
         <h3
-            class="font-semibold border p-3 rounded-full bg-[--primary-blue-astro] w-max text-center text-xl">
+            class="font-bold border p-3 rounded-full bg-[--primary-blue-astro] w-max text-center text-xl text-[--cake-astro]">
             Temporada de otoño
         </h3>
         <h1 class="font-extrabold text-6xl my-4">Nuestras galletas!</h1>
@@ -77,15 +77,14 @@ const cookies = [
                     class=" h-[500px] w-[500px] aspect-square object-cover"
                 />
             </div>
-            <div>
+            <div class="w-[900px]">
                 <h2
                     class={`text-4xl font-bold  ${cookie.colorFont} transition-all ease-in-out duration-700`}>
                     Galleta {cookie.name}
                 </h2>
                 <p
-                    class={`flex text-xl font-medium w-full flex-wrap ${cookie.colorFont} transition-all ease-in-out duration-700`}>
-                    Chocolate blanco y almendras; traidas exclusivamente desde
-                    la Luna por nuestra astronauta Bora
+                    class={`flex text-xl font-medium  flex-wrap ${cookie.colorFont} transition-all ease-in-out duration-700`}>
+                   {cookie.description}
                 </p>
                 <div class="my-5 gap-5 justify-start items-start">
                     <button
