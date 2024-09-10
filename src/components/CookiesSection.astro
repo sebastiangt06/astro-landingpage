@@ -1,0 +1,105 @@
+---
+const cookies = [
+    {
+        name: "Luna",
+        img: "/public/luna.webp",
+        colorPrincipal: "group-hover:bg-[--primary-blue-astro]",
+        colorBoton1: "bg-red-800",
+        colorBoton2: "bg-red-100",
+        colorFont: "group-hover:text-[--cake-astro]",
+        description:"",
+    },
+    {
+        name: "Venus",
+        img: "/public/venus.webp",
+        colorPrincipal: "group-hover:bg-[--cake-astro]",
+        colorBoton1: "bg-red-800",
+        colorBoton2: "bg-red-100",
+        colorFont: "group-hover:text-[--darkest-blue-astro]",
+        description:"",
+    },
+    {
+        name: "Marte",
+        img: "/public/marte.webp",
+        colorPrincipal: "group-hover:bg-[--green-astro]",
+        colorBoton1: "bg-red-800",
+        colorBoton2: "bg-red-100",
+        colorFont: "group-hover:text-[--cake-astro]",
+        description:"",
+    },
+    {
+        name: "Sol",
+        img: "/public/sol.webp",
+        colorPrincipal: "group-hover:bg-[--purple-astro]",
+        colorBoton1: "bg-red-800",
+        colorBoton2: "bg-red-100",
+        colorFont: "group-hover:text-[--cake-astro]",
+        description:"",
+    },
+    {
+        name: "Urano",
+        img: "/public/urano.webp",
+        colorPrincipal: "group-hover:bg-[--dark-blue-astro]",
+        colorBoton1: "bg-red-800",
+        colorBoton2: "bg-red-100",
+        colorFont: "group-hover:text-[--cake-astro]",
+        description:"",
+    },
+    {
+        name: "Saturno",
+        img: "/public/saturno.webp",
+        colorPrincipal: "group-hover:bg-[--yellow-astro]",
+        colorBoton1: "bg-red-800",
+        colorBoton2: "bg-red-100",
+        colorFont: "group-hover:text-[--darkest-blue-astro]",
+        description:"",
+    },
+];
+---
+
+<section class="flex flex-col gap-12 mx-32">
+    <div class="flex flex-col m-5 p-10">
+        <h3
+            class="font-semibold border p-3 rounded-full bg-[--primary-blue-astro] w-max text-center text-xl">
+            Temporada de otoño
+        </h3>
+        <h1 class="font-extrabold text-6xl my-4">Nuestras galletas!</h1>
+    </div>
+
+{
+    cookies.map((cookie, index) =>(
+    <div class={`flex justify-center items-center group my-10`}>
+        <div
+            class={`flex items-center m-10 border border-none rounded-3xl w-[1500px] h-[334px] ${cookie.colorPrincipal}  transition-all duration-700 ease-in-out  ${index % 2 === 0 ? '' : 'flex-row-reverse'}`}>
+            <div class="w-auto">
+                <img
+                    src={`${cookie.img}`}
+                    class=" h-[500px] w-[500px] aspect-square object-cover"
+                />
+            </div>
+            <div>
+                <h2
+                    class={`text-4xl font-bold  ${cookie.colorFont} transition-all ease-in-out duration-700`}>
+                    Galleta {cookie.name}
+                </h2>
+                <p
+                    class={`flex text-xl font-medium w-full flex-wrap ${cookie.colorFont} transition-all ease-in-out duration-700`}>
+                    Chocolate blanco y almendras; traidas exclusivamente desde
+                    la Luna por nuestra astronauta Bora
+                </p>
+                <div class="my-5 gap-5 justify-start items-start">
+                    <button
+                        class="border-0 font-semibold p-2 rounded-full group-hover:bg-[--cake-astro] transition-all group-hover:text-[--darkest-blue-astro] group-hover:px-4 duration-700 ease-in-out"
+                        >Informacion</button>
+                    <button
+                        class="border-0 font-semibold p-2 rounded-full group-hover:bg-[--darkest-blue-astro] transition-all group-hover:text-white group-hover:px-4 duration-700 ease-in-out"
+                        > <a href="http://wa.me/573007577246/?text=Hola Quiero comprar una galleta!" target="_blank">Ordena ahora!</a></button>
+                </div>
+            </div>
+        </div>
+    </div>      
+  ))
+}
+    
+    
+</section>

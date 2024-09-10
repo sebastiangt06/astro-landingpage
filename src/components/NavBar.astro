@@ -1,0 +1,68 @@
+---
+import '@fontsource/schoolbell';
+import Tiktok from './Icons/Tiktok.astro'
+import Instagram from './Icons/Instagram.astro'
+---
+
+<header id="navbar" class="fixed z-50 top-0 w-full bg-transparent ease-in-out transition-all duration-500">
+
+    
+    <nav class="relative flex flex-row justify-between items-center w-full h-full bg-[--primary-blue-astro] bg-transparent p-4 transition-all ease-in-out">
+        <div class="flex flex-row gap-2 relative z-20">
+            <a href="https://www.instagram.com/astrocookies1/" target="_blank"><Tiktok/></a>
+            <a href="https://www.tiktok.com/@astrocookies1" target="_blank"><Instagram/></a>
+            <h4 class="font-bold text-xl">Conecta con nosotros!</h4>
+        </div>
+        <h1 class="text-[--darkest-blue-astro] font-extrabold text-3xl">Astro Cookies</h1>
+        <button id="buttonNav" class="border rounded-full border-transparent p-3 invisible ease-in-out transition-all duration-500">
+            <h3 class="text-2xl text-white font-semibold"><a href="http://wa.me/573007577246/?text=Hola Quiero comprar una galleta!" target="_blank">Ordena ahora!</a></h3>
+        </button>
+
+    </nav>
+
+</header>
+
+<style>
+    header{
+        /*  font-family: 'Schoolbell', cursive; */
+         font-family:'Baloo Bhaijaan 2 Variable', system-ui;
+    }
+
+       /* Asegúrate de que bg-primary-blue esté definida */
+    .bg-primary-blue {
+        background-color: var(--primary-blue-astro);
+        transition: all 0.7s ease-in-out;
+    }
+
+    .display{
+        visibility: visible;
+        background-color: var(--darkest-blue-astro);
+        transition: all 0.7s ease-in-out;     
+    }
+</style>
+
+<script>
+    
+    // Asegúrate de que el código solo se ejecute en el cliente
+    if (typeof window !== 'undefined') {
+        document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', function() {
+                const navbar = document.getElementById('navbar');
+                const navbarButton = document.getElementById('buttonNav')
+                const scrollPosition = window.scrollY;
+
+                // Cambia el fondo del NavBar cuando se hace scroll
+                if (scrollPosition > 10) {
+                    navbar.classList.remove('bg-transparent');
+                    navbar.classList.add('bg-primary-blue');
+                    navbarButton.classList.add('display');
+                } else {
+                    navbar.classList.remove('bg-primary-blue');
+                    navbar.classList.add('bg-transparent');
+                    navbarButton.classList.remove('display');   
+                }
+            });
+        });
+    }
+
+</script>
