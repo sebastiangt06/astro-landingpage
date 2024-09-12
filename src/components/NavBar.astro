@@ -7,14 +7,15 @@ import Instagram from './Icons/Instagram.astro'
 <header id="navbar" class="fixed z-50 top-0 w-full bg-transparent ease-in-out transition-all duration-700">
     
     <nav class="relative flex flex-row justify-between items-center w-full h-full bg-[--primary-blue-astro] bg-transparent p-4 transition-all ease-in-out">
-        <div class="flex flex-row gap-2 relative z-20">
-            <a id="text-color" href="https://www.tiktok.com/@astrocookies1" target="_blank" class="text-[--cake-astro]"><Tiktok/></a>
-            <a id="text-color2" href="https://www.instagram.com/astrocookies1/"  target="_blank" class="text-[--cake-astro]"><Instagram/></a>
-            <h4 id="text-color3" class="font-bold text-2xl text-[--cake-astro]">¡Siguenos en nuestras redes!</h4>
+
+        <div class="flex flex-row gap-2 relative z-20 items-center">
+            <a id="text-color" href="https://www.tiktok.com/@astrocookies1" target="_blank" class="text-[--cake-astro]"><Tiktok class="size-5 md:size-9"/></a>
+            <a id="text-color2" href="https://www.instagram.com/astrocookies1/"  target="_blank" class="text-[--cake-astro]"><Instagram class="size-5 md:size-9"/></a>
+            <h4 id="text-color3" class="font-semibold text-xs sm:font-bold sm:text-2xl text-[--cake-astro] flex-wrap w-[90px] sm:w-full">¡Siguenos en nuestras redes!</h4>
         </div>
-        <h1 id="text-color4" class="text-[--cake-astro] font-extrabold text-4xl">Astro Cookies</h1>
-        <button id="buttonNav" class="border rounded-full border-transparent p-3 invisible ease-in-out transition-all">
-            <h3 class="text-2xl text-white font-semibold"><a href="http://wa.me/573007577246/?text=Hola Quiero comprar una galleta!" target="_blank">Ordena ahora!</a></h3>
+        <img id="imgBanner" src="/public/astro-logo.webp" class="w-[40px] sm:w-[80px] h-auto sm:scale-110 duration-700"/>
+        <button id="buttonNav" class="border rounded-full border-transparent p-1 sm:p-3 invisible ease-in-out transition-all">
+            <h3 class="text-xs sm:text-2xl text-white font-semibold"><a href="http://wa.me/573007577246/?text=Hola Quiero comprar una galleta!" target="_blank">Ordena ahora!</a></h3>
         </button>
 
     </nav>
@@ -42,7 +43,10 @@ import Instagram from './Icons/Instagram.astro'
     .text-color{
         color: var(--darkest-blue-astro);
     }
-
+    .img{
+        transform: scale(1);
+        width: 100px;
+    }
 </style>
 
 <script>
@@ -56,7 +60,8 @@ import Instagram from './Icons/Instagram.astro'
                 const navText = document.getElementById("text-color")
                 const navText2 = document.getElementById("text-color2")
                 const navText3 = document.getElementById("text-color3")
-                const navText4 = document.getElementById("text-color4")
+                const imgBanner = document.getElementById("imgBanner")
+                
                 const scrollPosition = window.scrollY;
 
                 // Cambia el fondo del NavBar cuando se hace scroll
@@ -68,7 +73,7 @@ import Instagram from './Icons/Instagram.astro'
                     navText2.classList.add('text-color')
                     navText3.classList.add('text-color')
                     navText3.classList.add('text-color')
-                    navText4.classList.add('text-color')
+                    imgBanner.classList.add('img')                    
                 } else {
                     navbar.classList.remove('bg-primary-blue');
                     navbar.classList.add('bg-transparent');
@@ -76,7 +81,7 @@ import Instagram from './Icons/Instagram.astro'
                     navText.classList.remove('text-color')
                     navText2.classList.remove('text-color')
                     navText3.classList.remove('text-color')
-                    navText4.classList.remove('text-color')
+                    imgBanner.classList.remove('img') 
                 }
             });
         });

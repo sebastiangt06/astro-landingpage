@@ -14,7 +14,7 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -24,6 +24,29 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		min-height: 100vh; /* Asegura que cubra la altura total de la ventana */
+		display: flex;     /* Si necesitas alinear elementos en la página */
+		flex-direction: column; 
+		background-color: #FFFF;
+		font-size: 16px;   /* Ajustar tamaño base */
+		line-height: 1.6;  /* Proporciona mejor legibilidad */
+	}
+
+	html, body {
+		overflow-x: hidden; /* Evita el scroll horizontal */
+		width: 100%; /* Asegura que ocupe todo el ancho */
+	}
+
 	:root {
 		--primary-blue-astro : #9994CF;
 		--secundary-blue-astro:#7A73C8;
@@ -49,7 +72,8 @@ const { title } = Astro.props;
 	html {
 		/* font-family: 'Schoolbell', cursive; */
 		font-family:'Baloo Bhaijaan 2 Variable', system-ui;
-		background: #1315a;
+		/* background: #FEEFE5; */
+		background-color: #FFFF;
 		color: var(--darkest-blue-astro);
 	}
 	code {
